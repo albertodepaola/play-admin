@@ -6,7 +6,6 @@
 GET     /                           controllers.Application.index()
 
 # Base controller
-GET		/base						controllers.BaseController.index()
 GET		/generic/:entity			controllers.GenericController.index(entity:String)
 
 # Map static resources from the /public folder to the /assets URL path
