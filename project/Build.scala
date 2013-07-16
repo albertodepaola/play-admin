@@ -14,9 +14,11 @@ object ApplicationBuild extends Build {
     javaEbean,
     "org.javatuples" % "javatuples" % "1.2"
   )
-
+  
+  
   val main = play.Project(appName, appVersion, appDependencies).settings(
-    // Add your own project settings here      
+    // Add your own project settings here
+    javacOptions ++= Seq("-source", "1.7", "-target", "1.7")
   )
 
 }

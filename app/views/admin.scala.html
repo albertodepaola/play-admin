@@ -1,0 +1,24 @@
+@(message: String)(entities: List[BasePojo])(entityForm: Form[BasePojo])
+
+@import helper._
+@main("Welcome to Play 2.1 from index 2!!") {
+	@{var teste = ""}
+    <h1>Entities</h1>
+    <ul>
+    @for(entity <- entities) {
+    	<li>@entity.getId()</li>
+    }
+    </ul>
+    <p>@message
+    
+    @form(routes.GenericController.newEntity(request.path.split('/')(2))) {
+        
+        @inputText(entityForm("name"))
+         
+        @inputText(entityForm("username")) 
+        
+        <input type="submit" value="Create">
+        
+    }
+    
+}

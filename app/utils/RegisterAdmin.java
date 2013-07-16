@@ -1,19 +1,12 @@
 package utils;
 
-import java.util.Collection;
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
+import java.util.*;
 
-import javax.persistence.TupleElement;
+import models.*;
 
-import org.javatuples.Pair;
-import org.javatuples.Tuple;
+import org.javatuples.*;
 
-import views.html.index2;
-
-import models.CustomAdmin;
-import models.User;
+import views.html.*;
 
 @SuppressWarnings("rawtypes")
 public class RegisterAdmin {
@@ -22,7 +15,8 @@ public class RegisterAdmin {
 	
 	static {
 		// FIXME isso esta fixo aqui para ter um lugar onde fazer...
-		registerAdmin(User.class, new CustomAdmin.Builder<User>(User.class).view(index2.class).build());
+		registerAdmin(User.class, new CustomAdmin.Builder<User>(User.class).view(admin.class).build());
+		registerAdmin(Person.class, new CustomAdmin.Builder<Person>(Person.class).view(admin.class).build());
 	}
 
 	public static void registerAdmin(Class entity) {

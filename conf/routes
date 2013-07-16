@@ -7,6 +7,8 @@ GET     /                           controllers.Application.index()
 
 # Base controller
 GET		/generic/:entity			controllers.GenericController.index(entity:String)
+POST	/generic/:entity			controllers.GenericController.newEntity(entity:String)
+POST 	/generic/:entity/:id/delete	controllers.GenericController.deleteEntity(entity:String,id:Long)	
 
 # Map static resources from the /public folder to the /assets URL path
 GET     /assets/*file               controllers.Assets.at(path="/public", file)
